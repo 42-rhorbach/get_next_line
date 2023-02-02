@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 17:28:50 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/01/31 16:48:49 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/02/02 16:46:32 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,21 @@ size_t	ft_strlen(const char *ptr)
 	while (ptr[counter] != '\0')
 		counter++;
 	return (counter);
+}
+
+char	*clear(char *line)
+{
+	free(line);
+	return (NULL);
+}
+
+char	*empty_string(void)
+{
+	char	*str;
+
+	str = malloc(1 * sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	str[0] = '\0';
+	return (str);
 }

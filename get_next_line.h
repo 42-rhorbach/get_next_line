@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 17:28:57 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/01/31 16:55:41 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/02/02 16:47:03 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,16 @@
 #  define BUFFER_SIZE 1
 # endif
 
+typedef enum e_nl_found {
+	ERROR,
+	NL_NOT_FOUND,
+	NL_FOUND
+}	t_nl_found;
+
 char	*get_next_line(int fd);
 void	*ft_memmove(void *pdst, const void *psrc, size_t n);
 size_t	ft_strlen(const char *ptr);
+char	*clear(char *line);
+char	*empty_string(void);
 
 #endif
