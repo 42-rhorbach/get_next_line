@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 17:28:50 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/02/02 16:46:32 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/02/07 15:09:45 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void	*ft_memmove(void *pdst, const void *psrc, size_t n)
 	return (dst);
 }
 
-size_t	ft_strlen(const char *ptr)
+ssize_t	ft_strlen(const char *ptr)
 {
-	size_t	counter;
+	ssize_t	counter;
 
 	counter = 0;
 	while (ptr[counter] != '\0')

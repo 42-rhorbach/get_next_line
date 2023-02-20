@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 17:28:57 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/02/02 16:47:03 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/02/20 17:35:15 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 10
 # endif
 
 typedef enum e_nl_found {
@@ -29,7 +29,7 @@ typedef enum e_nl_found {
 
 char	*get_next_line(int fd);
 void	*ft_memmove(void *pdst, const void *psrc, size_t n);
-size_t	ft_strlen(const char *ptr);
+ssize_t	ft_strlen(const char *ptr);
 char	*clear(char *line);
 char	*empty_string(void);
 

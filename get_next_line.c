@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 17:28:55 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/02/02 16:46:25 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/02/20 17:45:16 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ char	*append_buffer(char **line_ptr, char *buffer, int buffer_len)
 	if (dst == NULL)
 		return (NULL);
 	ft_memmove(dst, *line_ptr, line_len);
-	// ft_memmove(dst + line_len, buffer, buffer_len); //?
 	ft_memmove(&dst[line_len], buffer, buffer_len);
 	dst[buffer_len + line_len] = '\0';
 	free(*line_ptr);
@@ -37,7 +36,7 @@ char	*append_buffer(char **line_ptr, char *buffer, int buffer_len)
 }
 
 t_nl_found	pass_new_line(char *temp, char **line_ptr,
-	char *line_part, int part_len)
+	char *line_part, ssize_t part_len)
 {
 	int		i;
 
@@ -54,6 +53,7 @@ t_nl_found	pass_new_line(char *temp, char **line_ptr,
 	}
 	if (append_buffer(line_ptr, line_part, part_len) == NULL)
 		return (ERROR);
+	temp[0] = '\0';
 	return (NL_NOT_FOUND);
 }
 
@@ -63,7 +63,7 @@ char	*get_next_line(int fd)
 	char		buffer[BUFFER_SIZE];
 	char		*line;
 	t_nl_found	nl_found;
-	int			buffer_bytes;
+	ssize_t		buffer_bytes;
 
 	line = empty_string();
 	if (line == NULL)
@@ -85,34 +85,3 @@ char	*get_next_line(int fd)
 	}
 	return (clear(line));
 }
-
-int	main (void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("The-Fire-Fades.txt", O_RDONLY);
-	if (fd < 0)
-		return (1);
-	while ((line = get_next_line(fd)) != NULL)
-	{
-		printf("%s", line);
-		free(line);
-	}
-	// printf("%s", line);
-	close(fd);
-}
-
-// <hello ><world
-// ><test
-// t><est2
-// b><ye
-// a
-// b><
-// c>
-
-// tmp: \0
-// tmp: t\0
-// tmp: b\0
-// tmp: a\nb\0
-// tmp: b\0
