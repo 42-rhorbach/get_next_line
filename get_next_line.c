@@ -6,17 +6,11 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 17:28:55 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/02/20 17:45:16 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/02/20 17:51:18 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-//make functions for the found\nline leftover functions
-//protect all mallocs
-//error handling
-//split functions into one reusable
-// free mallocs
 
 char	*append_buffer(char **line_ptr, char *buffer, int buffer_len)
 {
