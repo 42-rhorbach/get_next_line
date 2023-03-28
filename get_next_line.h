@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 17:28:57 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/02/20 17:49:33 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/02/21 19:05:03 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include <stdio.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
+# endif
+
+# if BUFFER_SIZE <= 0
+#  error BUFFER_SIZE should not be less than 1
 # endif
 
 typedef enum e_nl_found {

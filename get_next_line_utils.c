@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 17:28:50 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/02/07 15:09:45 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/02/21 19:00:55 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ ssize_t	ft_strlen(const char *ptr)
 	ssize_t	counter;
 
 	counter = 0;
+	if (ptr == NULL)
+		return (0);
 	while (ptr[counter] != '\0')
 		counter++;
 	return (counter);
