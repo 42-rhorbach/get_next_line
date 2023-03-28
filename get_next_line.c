@@ -6,7 +6,7 @@
 /*   By: rhorbach <rhorbach@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/25 17:28:55 by rhorbach      #+#    #+#                 */
-/*   Updated: 2023/03/28 13:17:52 by rhorbach      ########   odam.nl         */
+/*   Updated: 2023/03/28 14:13:23 by rhorbach      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,37 +79,3 @@ char	*get_next_line(int fd)
 	}
 	return (clear(line));
 }
-
-// void atExit()
-// {
-// 	system("leaks a.out");
-// }
-
-// int main (void)
-// {
-//     int     fd;
-//     char    *line;
-
-//     fd = open("test.txt", O_RDONLY);
-//     // fd = 42;
-//     // fd = STDIN_FILENO;
-//     // /if (fd < 0)
-//     //    return (1);
-//     // while ((line = get_next_line(fd)) != NULL)
-//     // {
-//     //  printf("| %s", line);
-//     //  free(line);
-//     // }
-
-//     line = get_next_line(fd);
-//     while (line != NULL)
-//     {
-//         printf("| %s", line);
-//         free(line);
-//         line = get_next_line(fd);
-//     }
-
-//     // printf("%s", line);
-// 	atExit();
-//     close(fd);
-// }
